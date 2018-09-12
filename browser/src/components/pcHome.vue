@@ -1,10 +1,12 @@
 <template>
-    
+  <div>
+    这是pc端
+  </div>
 </template>
 
 <script>
     export default {
-        name: "new"
+        name: "pcHome"
     }
 </script>
 

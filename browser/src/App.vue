@@ -1,13 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted(){
+    const that = this;
+    console.log($(window).width());
+    if($(window).width() <= 1024){
+      that.$router.push({name:"mHome"})
+    }else {
+      that.$router.push({name:"pcHome"})
+    }
+  }
 }
 </script>
 
@@ -18,6 +26,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+  *{
+    padding: 0;
+    margin: 0;
+  }
 </style>
